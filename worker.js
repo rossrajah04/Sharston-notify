@@ -45,7 +45,7 @@ async function handleSchedule(body, env, cors) {
     if (!cp.title || !cp.sendAfter) continue;
     const payload = {
       app_id: env.ONESIGNAL_APP_ID,
-      include_player_ids: [playerId],
+      include_subscription_ids: [playerId],
       headings: { en: cp.title },
       contents: { en: cp.body || '' },
       send_after: cp.sendAfter,
